@@ -31,7 +31,7 @@ interface BaseProps
   as?: 'button' | 'a';
   href?: string;
   isLoading?: boolean;
-  textProps?: HTMLAttributes<HTMLSpanElement>;
+  textprops?: HTMLAttributes<HTMLSpanElement>;
 }
 
 type Props = BaseProps &
@@ -47,7 +47,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
       as = 'button',
       isLoading,
       variant,
-      textProps = {},
+      textprops = {},
       ...rest
     } = props;
 
@@ -61,8 +61,8 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
         {...(as === 'a' ? { href } : { disabled: isLoading })}
         {...props}>
         <span
-          className={cn('relative z-10 text-sm', textProps.className)}
-          {...textProps}>
+          className={cn('relative z-10 text-sm', textprops.className)}
+          {...textprops}>
           {children}
         </span>
         {ButtonSvg(variant === 'secondary')}
