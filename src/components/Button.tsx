@@ -16,6 +16,7 @@ const buttonStyles = cva(
       variant: {
         primary: 'text-n-1',
         secondary: 'text-n-8',
+        hamburger: 'ml-auto lg:hidden px-3',
       },
       defaultVariants: {
         variant: 'primary',
