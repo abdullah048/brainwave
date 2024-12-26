@@ -3,13 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { navigation } from '@/constants';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import { HamburgerMenu } from '@/components/Design/Header';
 import MenuSvg from '../../public/assets/svg/MenuSvg';
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState(window.location.hash || '');
+  const [activeLink, setActiveLink] = useState('');
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const updateActiveLink = useCallback(
@@ -26,6 +26,12 @@ const Header = () => {
     },
     [updateActiveLink]
   );
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setActiveLink(window.location.hash);
+    }
+  }, []);
 
   return (
     <header

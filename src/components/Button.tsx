@@ -62,7 +62,10 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
         {...(as === 'a' ? { href } : { disabled: isLoading })}
         {...props}>
         <span
-          className={cn('relative z-10 text-sm', textprops.className)}
+          className={cn(
+            'relative z-10 font-code font-bold uppercase text-xs',
+            textprops.className
+          )}
           {...textprops}>
           {children}
         </span>
