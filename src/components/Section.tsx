@@ -18,8 +18,6 @@ const Section = forwardRef<HTMLElement, Props>((props: Props, ref) => {
     ...rest
   } = props;
 
-  console.log(customPaddings);
-
   return (
     <section
       ref={ref}
