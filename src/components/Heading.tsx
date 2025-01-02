@@ -4,6 +4,7 @@ interface Props extends HTMLAttributes<HTMLHeadingElement> {
   title: string;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   override?: boolean;
+  text?: string;
 }
 
 const Heading = forwardRef<HTMLHeadingElement, Props>((props: Props, ref) => {
@@ -12,6 +13,7 @@ const Heading = forwardRef<HTMLHeadingElement, Props>((props: Props, ref) => {
     className,
     as: Component = 'h1',
     override = false,
+    text,
     ...rest
   } = props;
   return (
@@ -24,6 +26,7 @@ const Heading = forwardRef<HTMLHeadingElement, Props>((props: Props, ref) => {
       <Component ref={ref} className={Component} {...rest}>
         {title}
       </Component>
+      {text && <p className='body-2 mt-4 text-n-4'>{text}</p>}
     </div>
   );
 });

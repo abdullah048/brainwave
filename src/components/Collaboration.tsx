@@ -5,8 +5,6 @@ import Image from 'next/image';
 import Button from '@/components/Button';
 import { LeftCurve, RightCurve } from '@/components/Design/Collaboration';
 
-// 5:59:41
-
 const Collaboration = () => {
   return (
     <Section crosses>
