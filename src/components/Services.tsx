@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { brainwaveServices } from '@/constants';
 import { Generating } from '@/components/Design/Hero';
 
+// 6:12:35
+
 const Services = () => {
   return (
     <Section id='how-to-use'>
